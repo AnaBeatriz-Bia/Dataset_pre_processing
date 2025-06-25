@@ -1,0 +1,6 @@
+# Ignorar dataset AFO
+PART_1/
+PART_2/
+PART_3/
+*.jpg
+*.txt
