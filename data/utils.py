@@ -1,8 +1,3 @@
-# utils.py
-"""
-Funções utilitárias para o projeto
-"""
-
 import torch
 import os
 from pathlib import Path

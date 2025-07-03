@@ -1,8 +1,3 @@
-# trainer.py
-"""
-Funções para treinamento e validação do modelo
-"""
-
 import torch
 import torch.optim as optim
 from model import YOLOLoss

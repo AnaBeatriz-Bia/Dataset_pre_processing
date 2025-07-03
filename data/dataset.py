@@ -1,8 +1,3 @@
-# dataset.py
-"""
-Dataset customizado para detecção de humanos e barcos
-"""
-
 import torch
 from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
@@ -30,6 +25,7 @@ class HumanBoatDataset(Dataset):
         
         # Carregar anotações
         label_path = self.labels_dir / f"{img_path.stem}.txt"
+        print(f"Label path {label_path}")
         boxes = []
         
         if label_path.exists():
@@ -70,9 +66,7 @@ def collate_fn(batch):
 
 
 def get_transforms(img_size=640):
-    """
-    Retorna as transformações para pré-processamento das imagens
-    """
+
     return transforms.Compose([
         transforms.Resize((img_size, img_size)),
         transforms.ToTensor(),
@@ -81,7 +75,7 @@ def get_transforms(img_size=640):
     ])
 
 
-def create_dataloaders(dataset_dir, batch_size=16, img_size=640, num_workers=4):
+def create_dataloaders(dataset_dir, batch_size=8, img_size=640, num_workers=4):
     """
     Cria os DataLoaders para treino e validação
     """

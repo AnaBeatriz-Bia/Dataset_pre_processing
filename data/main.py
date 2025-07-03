@@ -1,8 +1,3 @@
-# main.py
-"""
-Script principal para executar o treinamento do modelo YOLO
-"""
-
 import torch
 from config import *
 from dataset import create_dataloaders
